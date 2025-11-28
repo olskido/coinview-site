@@ -1,0 +1,134 @@
+/* Trending.css */
+
+/* --- General Layout (Unchanged) --- */
+.trend-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* --- REPAIRED CARD STYLES (Color and Minimal Edges) --- */
+.trend-card {
+  /* BACKGROUND COLOR: Using a clean, deep gray from your sample image */
+  background: #0D0D0D  ; 
+  /* Minimal border for separation */
+  border: 1px solid #3A3F44; 
+  /* Reduced border-radius for a less angular/rounded look */
+  border-radius: 4px; 
+  
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --- Increased Font Sizes for Visibility --- */
+.trend-card__header {
+  font-weight: 600;
+  /* Increased font size for header */
+  font-size: 1.5rem; 
+  color: #E0E0E0; 
+}
+
+/* --- Content Item Styles --- */
+.trend-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 1rem; /* Base font size for secondary text */
+  color: #B0B0B0; 
+}
+
+.trend-summary strong {
+  color: #ffffff; 
+}
+
+.trend-item {
+  display: grid;
+  grid-template-columns: 48px 1fr auto auto;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #2B2B2B; 
+  background: none; 
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s;
+  color: #E0E0E0;
+}
+
+/* Subtle hover effect for interaction */
+.trend-item:hover {
+  background-color: #242424; 
+  border-radius: 4px; 
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  margin-left: -0.9rem; 
+  margin-right: -0.9rem; 
+}
+
+.trend-item:last-child {
+  border-bottom: none;
+}
+
+.trend-item__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #3A3A3A; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trend-item__name {
+  font-weight: 500;
+  /* Increased font size for coin name */
+  font-size: 1.1rem; 
+}
+
+.trend-item__symbol {
+  font-size: 0.9rem; /* Adjusted for readability */
+  color: #95a3a7; 
+  text-transform: uppercase;
+}
+
+.trend-item__price {
+  /* Increased font size for price */
+  font-size: 1.15rem; 
+  color: #F0F0F0;
+  font-weight: 600;
+}
+
+.trend-item__change {
+  font-weight: 600;
+  /* Increased font size for change percentage */
+  font-size: 1.05rem; 
+}
+
+/* Financial Colors */
+.trend-item__change.positive {
+  color: #00D1A3; 
+}
+
+.trend-item__change.negative {
+  color: #FF5A5A; 
+}
+
+/* Media Query (Unchanged) */
+@media (max-width: 640px) {
+  .trend-item {
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .trend-item__price,
+  .trend-item__change {
+    grid-column: span 2;
+  }
+}
