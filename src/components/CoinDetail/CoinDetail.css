@@ -19,7 +19,8 @@
 .coin-detail header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  /* Changed from flex-start to center */
   gap: 1rem;
 }
 
@@ -59,8 +60,13 @@
   font-weight: 600;
 }
 
-.coin-detail__change.positive { color: #4caf95; }
-.coin-detail__change.negative { color: #ff6b6b; }
+.coin-detail__change.positive {
+  color: #4caf95;
+}
+
+.coin-detail__change.negative {
+  color: #ff6b6b;
+}
 
 .coin-detail__chart {
   background: rgba(10, 25, 43, 0.85);
@@ -90,45 +96,47 @@
   margin-top: 0.75rem;
 }
 
-/* UPDATED: BIG HORIZONTAL STATS — BIGGER FONTS, STRAIGHT LINE */
+/* UPDATED: VERTICAL STATS LIST */
 .coin-detail__stats-row {
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 2rem 0 0;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .coin-detail__stat-item {
-  flex: 1;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  min-width: 0;
+  width: 100%;
 }
 
 .coin-detail__stat-label {
   color: #a0b8d8;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.65rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   font-weight: 500;
-  white-space: nowrap;
+  margin: 0;
+  /* Remove bottom margin */
 }
 
 .coin-detail__stat-value {
-  font-size: 0.75rem;
+  font-size: 1rem;
+  /* Increased size for readability */
   font-weight: 700;
   color: #ffffff;
-  line-height: 1;
 }
 
-.coin-detail__stat-value.high { color: #4caf95; }
-.coin-detail__stat-value.low { color: #ff6b6b; }
+.coin-detail__stat-value.high {
+  color: #4caf95;
+}
+
+.coin-detail__stat-value.low {
+  color: #ff6b6b;
+}
 
 .coin-detail .loading-message {
   margin: 0;
@@ -141,22 +149,12 @@
   .coin-detail {
     order: -1;
   }
-  
-  .coin-detail__stats-row {
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .coin-detail__stat-item {
-    flex: 1 1 calc(50% - 0.75rem);
-    min-width: 140px;
-  }
-  
+
+
+
   .coin-detail__stat-label {
     font-size: 0.85rem;
   }
-  
-  .coin-detail__stat-value {
-    font-size: 1.5rem;
-  }
+
+
 }
