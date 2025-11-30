@@ -31,7 +31,7 @@ function Header({ onLogoClick }) {
         </button>
         <nav className="cv-header__nav" aria-label="Primary">
           <a href="#home">Home</a>
-          <a href="#coins">Tokens</a>
+          <a href="#coins">Coins</a>
           <a href="#contact">Contact</a>
         </nav>
         <select
