@@ -63,7 +63,7 @@ function App() {
       <div className="page-container">
         <Header onLogoClick={handleLogoClick} />
         <main>
-          <SearchBar />
+          <SearchBar onSelectCoin={setSelectedCoinId} />
           <Stats stats={stats} formatLargeCurrency={formatLargeCurrencyWithSymbol} />
           <Trending formatCurrency={formatCurrencyWithSymbol} />
           <section className="market-section" id="coins">

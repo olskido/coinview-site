@@ -1,31 +1,23 @@
+
 import { useContext, useEffect, useMemo, useState } from 'react'
 import { CoinContext } from '../../context/CoinContext'
 import './CryptoTable.css'
 
 function CryptoTable({ onSelectCoin, selectedCoinId }) {
-  const { allCoins, loading, currency } = useContext(CoinContext)
+  const { allCoins, loading, currency, searchTerm } = useContext(CoinContext)
   const [currentPage, setCurrentPage] = useState(1)
-  const [searchTerm, setSearchTerm] = useState('') // ← ONLY NEW LINE
 
   const pageSize = 10
   const maxPagesToShow = 10
 
-  // THIS LISTENS TO YOUR ORIGINAL SEARCH INPUT (NO CHANGE TO DESIGN)
-  useEffect(() => {
-    const input = document.querySelector('.search-bar__control input')
-    if (!input) return
-
-    const handleInput = (e) => setSearchTerm(e.target.value.toLowerCase())
-    input.addEventListener('input', handleInput)
-
-    return () => input.removeEventListener('input', handleInput)
-  }, [])
 
   useEffect(() => {
+    // This useEffect was responsible for setting up the search input listener
+    // and updating the local searchTerm state.
+    // Since searchTerm is now managed by CoinContext, this useEffect is no longer needed here.
     setCurrentPage(1)
-  }, [currency.name, searchTerm]) // ← reset page on search
+  }, [currency.name, searchTerm])
 
-  // FILTER COINS BASED ON WHAT YOU TYPE
   const filteredCoins = useMemo(() => {
     if (!searchTerm) return allCoins
     return allCoins.filter(coin =>
@@ -50,7 +42,8 @@ function CryptoTable({ onSelectCoin, selectedCoinId }) {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
       ...options,
-    })}`
+    })
+    } `
 
   const handleSelect = (coin) => onSelectCoin?.(coin.id)
 
@@ -107,7 +100,7 @@ function CryptoTable({ onSelectCoin, selectedCoinId }) {
         {pageButtons.map((pageNum) => (
           <button
             key={pageNum}
-            className={`page-btn ${currentPage === pageNum ? 'active' : ''}`}
+            className={`page - btn ${currentPage === pageNum ? 'active' : ''} `}
             onClick={() => setCurrentPage(pageNum)}
           >
             {pageNum}

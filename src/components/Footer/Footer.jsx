@@ -14,12 +14,10 @@ function Footer({ title, copy, onLogoClick }) {
         </button>
 
         <div className="footer__links">
-          {/* Contract Address */}
-          <a href="#" target="_blank" rel="noreferrer">
-            🔗 CA: 3nayMtqvCWroZtSbioFDNM6qKbEbrvWquwLkaxK2pump
+          <a href="https://pump.fun/coin/3nayMtqvCWroZtSbioFDNM6qKbEbrvWquwLkaxK2pump" target="_blank" rel="noreferrer">
+            🔗 CA: 3nayMtqvCWroZt...WquwLkaxK2pump
           </a>
 
-          {/* Telegram with real icon */}
           <a href="https://t.me/deeaaddd" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <svg
               width="20"
@@ -38,7 +36,7 @@ function Footer({ title, copy, onLogoClick }) {
 
           {/* Twitter */}
           <a href="https://x.com/olskiddo" target="_blank" rel="noreferrer">
-            𝕏 Twitter
+            𝕏 X
           </a>
 
           {/* GitHub */}

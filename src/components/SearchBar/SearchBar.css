@@ -88,8 +88,61 @@
     border-radius: 24px;
   }
 
+
   .search-bar__control button {
     width: 100%;
   }
 }
 
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.search-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.search-item span {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.search-item .symbol {
+  color: #888;
+  font-size: 0.85rem;
+  margin-left: auto;
+}

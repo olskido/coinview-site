@@ -6,6 +6,7 @@ const CoinContextProvider = ({ children }) => {
   const [allCoins, setAllCoins] = useState([])
   const [loading, setLoading] = useState(true)
   const [currency, setCurrency] = useState({ name: 'usd', symbol: '$' })
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     let isActive = true
@@ -49,6 +50,8 @@ const CoinContextProvider = ({ children }) => {
     currency,
     setCurrency,
     loading,
+    searchTerm,
+    setSearchTerm,
   }
 
   return <CoinContext.Provider value={contextValue}>{children}</CoinContext.Provider>
